@@ -1,0 +1,20 @@
+numero = float(input("Digite seu numero: "))
+Impar_Ou_Par = numero % 2
+
+while True:
+    if numero >= 100:
+        print("seu numero é maior que 100 e")
+    else:
+        print("seu numero é menor que 100 e")
+
+    if Impar_Ou_Par == 0:
+        print("numero par!")
+    else:
+        print("numero impar!")
+
+    numero = float(input("Digite seu numero: "))
+    Impar_Ou_Par = numero % 2
+    if numero == 0:
+        print("chega disso")
+        break
+
