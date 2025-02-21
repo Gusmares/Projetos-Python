@@ -4,27 +4,36 @@ print("**************************************************" "\n"
       "JOGO DE ADIVINHAÇÃO" "\n" "**************************************************")
 
 escolhido = random.randint(1, 100)
+rodada = 3
+round = 1
 
-while True:
-    try:
-        tentativa = int(input("Digite o seu número da sorte (1 a 100): "))
+while (round <= rodada):
+        try:
+            print("Tentativa {} de {}".format(round, rodada))
 
-        if tentativa == 0:
-            print("acabou!")
-            break
+            tentativa = int(input("Digite o seu número da sorte (1 a 100): "))
 
-        if tentativa < 1 or tentativa > 100:
-            print("Número inválido! Digite um número entre 1 e 100.")
-            continue  # Volta para o início do loop
+            if tentativa == 0:
+                print("acabou!")
+                break
 
-        if tentativa == escolhido:
-            print("🎉 Parabéns! Você acertou!")
-            break
-        else:
-            if(tentativa > escolhido):
-                print("Errou, seu numero é menor doque esse")
+            if tentativa < 1 or tentativa > 100:
+                print("Número inválido! Digite um número entre 1 e 100.")
+                continue
+
+            if tentativa == escolhido:
+                print("🎉 Parabéns! Você acertou!")
+                break
             else:
-                print("Errou, seu numero é maior doque esse")
 
-    except ValueError:
-        print("Digite um número válido!")
+                if(tentativa > escolhido):
+                    print("Errou, seu numero é menor doque esse")
+                else:
+                    print("Errou, seu numero é maior doque esse")
+
+            round = round +1
+
+        except ValueError:
+            print("Digite um número válido!")
+
+
